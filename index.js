@@ -11,6 +11,9 @@ app.get('/', (req, res) => {
 app.get("/log/:id", (req, res)=>{
   const id = req.params.id;
   console.log(`logging: ${id}`);
+  if(id === 4) {
+    throw Error("Error, id=" + id);
+  }
   res.send("logged");
 })
 
