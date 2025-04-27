@@ -8,11 +8,15 @@ app.get('/', (req, res) => {
   res.send('Hello, Express!');
 });
 
+setTimeout(()=>{
+  throw new Error("Time's up")
+}, 30000);
+
 app.get("/log/:id", (req, res)=>{
   const id = req.params.id;
   console.log(`logging: ${id}`);
-  if(id === 4) {
-    throw Error("Error, id=" + id);
+  if(id == 4){
+    throw new Error("Error")
   }
   res.send("logged");
 })
