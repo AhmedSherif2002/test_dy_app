@@ -9,8 +9,8 @@ setTimeout(()=>{
   isReady = true;
   setTimeout(()=>{
     isAlive = false;
-  }, 60000) // not alive after a minute since ready.
-}, 50000); // Ready After 50 seconds
+  }, 100000) // not alive after a minute since ready.
+}, 20000); // Ready After 50 seconds
 
 app.get("/ready", (req, res)=>{
   if(isReady)
@@ -28,9 +28,9 @@ app.get('/', (req, res) => {
   res.send('Hello, Express!');
 });
 
-setTimeout(()=>{
-  throw new Error("Time's up")
-}, 30000);
+// setTimeout(()=>{
+//   throw new Error("Time's up")
+// }, 30000);
 
 app.get("/log/:id", (req, res)=>{
   const id = req.params.id;
