@@ -3,9 +3,27 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT | 5000;
 
-const repoUrl = "https://github.com/AhmedSherif2002/data.git";
-console.log("repo: ", repoUrl?.replace("https://github.com/",""))
-// A basic route
+let isReady = false;
+let isAlive = true;
+setTimeout(()=>{
+  isReady = true;
+  setTimeout(()=>{
+    isAlive = false;
+  }, 60000) // not alive after a minute since ready.
+}, 50000); // Ready After 50 seconds
+
+app.get("/ready", (req, res)=>{
+  if(isReady)
+    res.status(200).send("Ready");
+  else res.status(500).send("Not ready yet!");
+})
+
+app.get("/alive", (req, res)=>{
+  if(isAlive)
+    res.status(200).send("I am Alive!");
+  else res.status(400).send("I am not alive.");
+})
+
 app.get('/', (req, res) => {
   res.send('Hello, Express!');
 });
@@ -23,7 +41,10 @@ app.get("/log/:id", (req, res)=>{
   res.send("logged");
 })
 
+
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
+
