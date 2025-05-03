@@ -5,8 +5,8 @@ const port = process.env.PORT | 5000;
 console.log("v222")
 let isReady = false;
 let isAlive = false;
-setTimeout(()=>{
-  isReady = true;
+// setTimeout(()=>{
+//   isReady = true;
 //   setTimeout(()=>{
 //     isAlive = false;
 //   }, 60000) // not alive after a minute since ready.
