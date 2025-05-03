@@ -24,9 +24,9 @@ app.get("/alive", (req, res)=>{
   else res.status(400).send("I am not alive.");
 })
 
-app.get('/', (req, res) => {
-  res.send('Hello, Express!');
-});
+// app.get('/', (req, res) => {
+//   res.send('Hello, Express!');
+// });
 
 // setTimeout(()=>{
 //   throw new Error("Time's up")
