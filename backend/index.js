@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT | 5000;
-console.log("v33333")
+console.log("v2332")
 let isReady = false;
 let isAlive = true;
 // setTimeout(()=>{
