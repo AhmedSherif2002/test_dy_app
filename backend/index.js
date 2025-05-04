@@ -41,7 +41,15 @@ app.get("/log/:id", (req, res)=>{
   res.send("logged");
 })
 
+app.get("/count", (req, res)=> {
+  count();
+  res.status(200).send("1");
+})
 
+function count(){
+  console.log("Counting...")
+  for(let i=0;i<100000000;i++){}
+}
 
 // Start the server
 app.listen(port, () => {
