@@ -4,7 +4,7 @@ const app = express();
 const port = process.env.PORT | 5000;
 console.log("version image")
 let isReady = false;
-let isAlive = true;
+let isAlive = false;
 // setTimeout(()=>{
 //   isReady = true;
 //   setTimeout(()=>{
@@ -19,6 +19,7 @@ app.get("/ready", (req, res)=>{
 })
 
 app.get("/alive", (req, res)=>{
+  console.log("probed, status: ", isAlive?"alive":"dead");
   if(isAlive)
     res.status(200).send("I am Alive!");
   else res.status(400).send("I am not alive.");
