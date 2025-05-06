@@ -4,7 +4,7 @@ const app = express();
 const port = process.env.PORT | 5000;
 console.log("version image")
 let isReady = false;
-let isAlive = true;
+let isAlive = false;
 // setTimeout(()=>{
 //   isReady = true;
 //   setTimeout(()=>{
