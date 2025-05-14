@@ -54,6 +54,7 @@ function count(){
 
 // Start the server
 app.listen(port, () => {
+  console.log("abcde");
   console.log(`Server running at http://localhost:${port}`);
 });
 
